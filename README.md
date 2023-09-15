@@ -14,14 +14,6 @@ The Unix command-line tools exemplify good software engineering practices and ad
 
 By following these philosophies, Unix command-line tools have become essential in software development and data engineering, enabling the construction of complex data processing workflows from simple, modular components.
 
-## Getting Started
-
-Before you begin the challenge, make sure you have the necessary tools and environment set up:
-
-- [Install a Unix-like operating system (e.g., Linux or macOS)](https://www.linux.org/pages/download/).
-- Familiarize yourself with basic Unix commands and the command-line interface (CLI).
-- Choose your preferred programming language (e.g., Python, C, or Shell) for implementing the `wc` command.
-
 ## Challenge Objectives
 
 Your task is to create a `wc`-like command-line tool that counts words, lines, and characters in a given text input. Here are the main objectives:
@@ -32,3 +24,33 @@ Your task is to create a `wc`-like command-line tool that counts words, lines, a
 - Count the number of characters in the input text.
 - Provide a user-friendly way to display the results.
 
+## Getting Started
+
+**Creating a JAR File:**
+
+1. Open your project in IntelliJ IDEA.
+3. Create a JAR configuration in IntelliJ IDEA.
+4. Build the JAR file using the "Build Project" option.
+
+**Running the Command-Line Application:**
+
+1. Open a terminal or command prompt.
+2. Navigate to the directory containing your JAR file.
+3. Run the JAR file using `java -jar your-application.jar`.
+
+**Sample output**
+
+```
+java -jar wordCount.jar temp.txt
+Command line arguments passed are temp.txt
+Number of lines in the file temp.txt are 3
+Number of words in the file temp.txt are 9
+Number of characters in the file temp.txt are 42
+```
+
+```
+cat temp.txt | java -jar wordCount.jar 
+Number of lines in the file temp.txt are 3
+Number of words in the file temp.txt are 9
+Number of characters in the file temp.txt are 42
+```
