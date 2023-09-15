@@ -1,5 +1,7 @@
 package org.example.Utils;
 
+import org.example.Main;
+
 import java.io.File;
 
 public class Delegator {
@@ -27,9 +29,7 @@ public class Delegator {
                 Counter.counter(fileName, option);
                 break;
             default:
-                System.out.println("Invalid option");
-                System.out.println("Valid options are -c, -l, -w, -m, all" );
-                System.out.println("Usage : java -jar wc.jar [option] [file name]");
+                Main.Usage();
                 System.exit(2);
         }
     }

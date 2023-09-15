@@ -17,7 +17,13 @@ public class Main {
         BufferedReader br;
         String option = "all";
         String fileName = "";
-
+        if(args.length==1){
+            fileName= args[0];
+            if(!checkFile(fileName)){
+                Usage();
+                System.exit(1);
+            }
+        }
         if (args.length == 0 || args[0].equalsIgnoreCase("-")) {
             isInputFromStandardInput = true;
             br = new BufferedReader(new InputStreamReader(System.in));
@@ -38,6 +44,7 @@ public class Main {
             fileName= args[0];
             System.out.println("Command line arguments passed are " + args[0]);
             if(!checkFile(fileName)){
+                Usage();
                 System.exit(1);
             }
             Delegator.delegate("all", new File(fileName));
@@ -58,5 +65,9 @@ public class Main {
             return false;
         }
         return true;
+    }
+    public static void Usage(){
+        System.out.println("Usage : java -jar wc.jar [option] [file name]");
+        System.out.println("Valid options are -c, -l, -w, -m, all" );
     }
 }
